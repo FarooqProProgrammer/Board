@@ -10,7 +10,6 @@ import 'react-quill/dist/quill.snow.css';
 import LoadingModal1 from '../../../../ReUseableComponent/LaodingModal1';
 import Dropzone from 'react-dropzone';
 import moment from 'moment/moment';
-import { toast } from 'react-toastify';
 
 
 export default function BlogForm() {
@@ -60,7 +59,7 @@ export default function BlogForm() {
         
       });
       console.log("Document written with ID: ", docRef.id);
-      toast("Content Added Success !")
+      // toast("Content Added Success !")
     }
   
    

@@ -4,13 +4,7 @@ import TabsComponent from "../../components/TabsComponent";
 import { TabPanel } from "react-tabs";
 import AddNewProperty from "./Components/AddNewProperty";
 import AddProperty from "../AddProperty";
-import {
-  collection,
-  deleteDoc,
-  doc,
-  onSnapshot,
-  query,
-} from "firebase/firestore";
+
 import { db } from "../../Config";
 import { Box, Image, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
@@ -33,6 +27,9 @@ export default function Properties() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  
+
 
   useEffect(() => {
     console.log(data);
@@ -59,6 +56,8 @@ export default function Properties() {
   return (
     <DefaultLayout>
       <div className="flex h-[70px] w-full cursor-pointer items-center justify-end px-10">
+
+       
         <CSVLink filename={"properties.csv"} data={Properties}>
           Download Csv
         </CSVLink>
@@ -67,6 +66,7 @@ export default function Properties() {
       <TabsComponent Header={["Properties", "Add New"]}>
         <TabPanel>
           <div className="grid gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            
             {data.map((item, index) => {
               return (
                 <Box
